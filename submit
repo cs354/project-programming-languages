@@ -1,5 +1,5 @@
 #!/bin/bash
 
-tar cfz submission.tgz c mysql ruby shell
-./util/submit.py 2 submission.tgz
+tar cfz submission.tar.gz c mysql ruby shell
+./util/submit.py 1 submission.tar.gz
 rm -f submission.tgz

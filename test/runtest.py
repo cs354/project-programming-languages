@@ -7,8 +7,10 @@ import subprocess
 
 
 def run():
-  langs = ["c", "ruby", "shell", "mysql"]
-  langs = ["mysql","c","shell"]
+
+  langs = ['mysql', 'ruby', 'shell', 'c']
+
+  results = {}
 
   if len(sys.argv) > 1:
     newlangs = []
