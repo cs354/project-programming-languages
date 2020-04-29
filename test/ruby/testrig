@@ -1,5 +1,5 @@
 #!/usr/bin/ruby
-require 'Answer'
+require './Answer.rb'
 
 @tests = [
                 "0|0x00000000|0x00000000",
