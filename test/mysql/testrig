@@ -11,9 +11,9 @@ CMD="mysql --host $MYSQLD_HOST -u root --skip-column-names -f test"
 #A5="1	Foo	*13488180CAC0FAD93622133AD6DBF52 2	Bar	*87151771178AE37AFFF2EA68112ADCF 1	Purple	 2	White	 pk	test	 name	test	 password	test	 user_pk	test_color	 fav_color	test_color	 "
 
 # New answers for mysql8
-A1="pk	int name	varchar(20) password	char(32)"
+A1="pk int(11) name varchar(20) password char(32)"
 A2="Foo 77e6fde46d36b4cd25fa5620e24558dd Bar 77e6fde46d36b4cd25fa5620e24558dd "
-A3="user_pk int fav_color varchar(20)"
+A3="user_pk int(11) fav_color varchar(20)"
 A4="1 Foo 7b987aed75e93e596a9550061f26131a 2 Bar 77e6fde46d36b4cd25fa5620e24558dd 1 Purple 2 White"
 A5="1	Foo	*13488180CAC0FAD93622133AD6DBF52 2	Bar	*87151771178AE37AFFF2EA68112ADCF 1	Purple	 2	White	 pk	test	 name	test	 password	test	 user_pk	test_color	 fav_color	test_color	 "
 A5="1 Foo 7b987aed75e93e596a9550061f26131a 2 Bar 77e6fde46d36b4cd25fa5620e24558dd 1 Purple 2 White pk test name test password test user_pk test_color fav_color test_color"
