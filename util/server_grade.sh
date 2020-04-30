@@ -1,9 +1,29 @@
 #!/bin/bash
-if ! tar -xf /tmp/submission/submission.tar.gz -C /tmp/submission; then# > /dev/null 2> /dev/null; then
+
+# This is the exact script that will grade your work.
+# It uses the exact same grader as ../runtest. If you get 100%
+# in your container. You'll get 100% on the server.
+
+
+FILE=/tmp/submission/submission.tar.gz
+if ! test -f "$FILE"; then
+  exit
+fi
+
+if ! tar -xf /tmp/submission/submission.tar.gz -C /tmp/submission 2> /dev/null; then
   echo "FAIL_UNTAR"
   exit
 fi
 
-touch /tmp/submission/name.h
-cp /tmp/submission/name.h /grading/name.h
-/grading/util/test.sh
+while ! mysqladmin ping -h"$MYSQLD_HOST" --silent > /dev/null ; do
+    sleep 1
+done
+sleep 2
+
+mv /tmp/submission/mysql/* /grading/mysql
+mv /tmp/submission/ruby/* /grading/ruby
+mv /tmp/submission/shell/* /grading/shell
+mv /tmp/submission/c/* /grading/c
+
+
+python3 /grading/util/grader.py
