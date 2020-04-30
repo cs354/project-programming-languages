@@ -6,6 +6,9 @@
 void test(int num, char *res)
 {
     char buffer[100];
+    for (int i = 0; i < 100; i++)
+        buffer[i] = "z";
+    buffer[99] = 0x00;
     put_stuff_in_buffer(buffer,num);
     if (!strcasecmp(buffer,res)) {
         printf("correct\n");
