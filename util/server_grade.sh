@@ -7,8 +7,12 @@
 
 FILE=/tmp/submission/submission.tar.gz
 if ! test -f "$FILE"; then
+  # Student entering container, not grading
+  /bin/bash
   exit
 fi
+
+# Grading
 
 if ! tar -xf /tmp/submission/submission.tar.gz -C /tmp/submission 2> /dev/null; then
   echo "FAIL_UNTAR"

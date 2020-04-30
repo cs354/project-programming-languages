@@ -1,5 +1,11 @@
 #!/bin/bash
-
+echo ""
+echo "   Submitting this project is slow so only submit"
+echo "   after you've passed the the tests locally."
+echo "   You're are graded on these same tests in the"
+echo "   same container so if you pass tests here you"
+echo "   will pass them in the grader."
+echo "   "
 tar cfz submission.tar.gz c mysql ruby shell
 ./util/submit.py 1 submission.tar.gz
 rm -f submission.tgz

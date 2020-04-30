@@ -16,7 +16,7 @@ A2="Foo 77e6fde46d36b4cd25fa5620e24558dd Bar 77e6fde46d36b4cd25fa5620e24558dd "
 A3="user_pk int fav_color varchar(20)"
 A4="1 Foo 7b987aed75e93e596a9550061f26131a 2 Bar 77e6fde46d36b4cd25fa5620e24558dd 1 Purple 2 White"
 A5="1	Foo	*13488180CAC0FAD93622133AD6DBF52 2	Bar	*87151771178AE37AFFF2EA68112ADCF 1	Purple	 2	White	 pk	test	 name	test	 password	test	 user_pk	test_color	 fav_color	test_color	 "
-A5="1 Foo 7b987aed75e93e596a9550061f26131a 2 Bar 77e6fde46d36b4cd25fa5620e24558dd 1 Purple 2 White name test password test pk test fav_color test_color user_pk test_color"
+A5="1 Foo 7b987aed75e93e596a9550061f26131a 2 Bar 77e6fde46d36b4cd25fa5620e24558dd 1 Purple 2 White pk test name test password test user_pk test_color fav_color test_color"
 echo "drop table if exists test,test_color;" | $CMD
 
 $CMD < 1.sql
