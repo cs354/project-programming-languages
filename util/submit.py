@@ -5,8 +5,8 @@ import sys
 import requests
 import warnings
 
-SITE='hamsa.cs.northwestern.edu'
-LOGIN='https://hamsa.cs.northwestern.edu/login/'
+SITE='spike.cs.northwestern.edu'
+LOGIN='https://spike.cs.northwestern.edu/login/'
 
 def submit(project, file):
   username = input('Username: ')
@@ -15,7 +15,7 @@ def submit(project, file):
   payload = {'username': username, 'password': password}
   session = requests.Session()
   session.post(LOGIN, data=payload, verify=False)
-  url = 'http://%s/projects/%i/submit/' % (SITE, project)
+  url = 'https://%s/projects/%i/submit/' % (SITE, project)
   files = {'file': open(file, 'rb')}
   response = session.post(url, files=files, verify=False)
   try:
@@ -27,7 +27,7 @@ def submit(project, file):
   started = False
   count = -1
   while True:
-    response = session.get('http://%s/projects/status/%i/' % (SITE, submission))
+    response = session.get('https://%s/projects/status/%i/' % (SITE, submission))
     status = int(response.text)
     if status == 0: break
     elif status == 1:
@@ -45,7 +45,7 @@ def submit(project, file):
 
   sys.stderr.write('\n')
 
-  response = session.get('http://%s/projects/result/%i/' % (SITE, submission))
+  response = session.get('https://%s/projects/result/%i/' % (SITE, submission))
   print(response.text)
 
 if __name__ == '__main__':
